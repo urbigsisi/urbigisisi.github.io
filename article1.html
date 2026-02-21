@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أنوثة بالفطرة | Born Feminine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Naskh+Arabic:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #c8788a;
+      --deep: #7a3f50;
+      --blush: #f5e6e9;
+      --cream: #fdf8f5;
+      --text: #3d2530;
+      --muted: #9a7880;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Noto Naskh Arabic', serif;
+      overflow-x: hidden;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(160deg, #fce8ed 0%, #f5dde4 40%, #e8c8d2 100%);
+    }
+    .mirror-scene {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeIn 1.8s ease forwards 0.3s;
+    }
+    .mirror-scene svg {
+      width: min(500px, 90vw);
+      height: auto;
+      filter: drop-shadow(0 20px 60px rgba(122,63,80,0.15));
+    }
+    .petal {
+      position: absolute;
+      width: 8px;
+      height: 12px;
+      background: radial-gradient(ellipse, #f0a8b8, #e07898);
+      border-radius: 50% 50% 50% 0;
+      opacity: 0;
+      animation: floatPetal linear infinite;
+    }
+    @keyframes floatPetal {
+      0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+      10%  { opacity: 0.6; }
+      90%  { opacity: 0.3; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+    .hero-title {
+      position: absolute;
+      bottom: 60px;
+      text-align: center;
+      opacity: 0;
+      animation: slideUp 1s ease forwards 1s;
+    }
+    .hero-title h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-style: italic;
+      color: var(--deep);
+      line-height: 1.1;
+      letter-spacing: 1px;
+    }
+    .hero-title p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--rose);
+      margin-top: 8px;
+      letter-spacing: 3px;
+    }
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+    .lang-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .lang-label span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .lang-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to left, transparent, var(--rose));
+    }
+    .section-ar {
+      direction: rtl;
+      text-align: right;
+      margin-bottom: 64px;
+    }
+    .section-ar .intro {
+      font-size: 1.05rem;
+      color: var(--rose);
+      font-style: italic;
+      margin-bottom: 28px;
+      line-height: 2;
+    }
+    .section-ar p {
+      font-size: 1.15rem;
+      line-height: 2.2;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+    .section-ar .highlight {
+      display: block;
+      background: linear-gradient(135deg, #fce8ed, #f5dde4);
+      border-right: 3px solid var(--rose);
+      padding: 20px 24px;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      line-height: 2;
+      color: var(--deep);
+      margin: 32px 0;
+      font-style: italic;
+    }
+    .section-ar .closing {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 2.2;
+      border-top: 1px solid #e8d0d6;
+      padding-top: 24px;
+      margin-top: 32px;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 56px 0;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--rose), transparent);
+    }
+    .divider span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--rose);
+    }
+    .section-en {
+      direction: ltr;
+      text-align: left;
+    }
+    .section-en .intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--rose);
+      margin-bottom: 28px;
+      line-height: 1.9;
+    }
+    .section-en p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 1.95;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+    .section-en .highlight {
+      display: block;
+      background: linear-gradient(135deg, #fce8ed, #f5dde4);
+      border-left: 3px solid var(--rose);
+      padding: 20px 24px;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--deep);
+      margin: 32px 0;
+      font-style: italic;
+    }
+    .section-en .closing {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.95;
+      border-top: 1px solid #e8d0d6;
+      padding-top: 24px;
+      margin-top: 32px;
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #fce8ed, #f0d8e0);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+    footer strong {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="petal" style="left:10%; animation-duration:9s; animation-delay:0s;"></div>
+  <div class="petal" style="left:25%; animation-duration:12s; animation-delay:2s;"></div>
+  <div class="petal" style="left:45%; animation-duration:8s; animation-delay:1s;"></div>
+  <div class="petal" style="left:65%; animation-duration:11s; animation-delay:3s;"></div>
+  <div class="petal" style="left:80%; animation-duration:10s; animation-delay:0.5s;"></div>
+
+  <div class="mirror-scene">
+    <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="200" cy="200" rx="110" ry="145" fill="#fce8ed" stroke="#c8788a" stroke-width="8"/>
+      <ellipse cx="200" cy="200" rx="98" ry="133" fill="#fff5f7" stroke="#e0a8b8" stroke-width="2"/>
+      <rect x="190" y="340" width="20" height="80" rx="10" fill="#c8788a"/>
+      <ellipse cx="200" cy="430" rx="22" ry="12" fill="#b06878"/>
+      <ellipse cx="200" cy="130" rx="28" ry="32" fill="#d4a0a8"/>
+      <path d="M174 115 Q160 90 168 75 Q180 60 200 65 Q220 60 232 75 Q240 90 226 115" fill="#8b4a5a"/>
+      <path d="M174 115 Q162 130 165 155 Q168 165 174 160" fill="#8b4a5a"/>
+      <path d="M226 115 Q238 130 235 155 Q232 165 226 160" fill="#8b4a5a"/>
+      <rect x="192" y="158" width="16" height="18" rx="4" fill="#d4a0a8"/>
+      <path d="M175 174 Q200 168 225 174 L232 240 Q200 248 168 240 Z" fill="#c8788a" opacity="0.7"/>
+      <path d="M175 178 Q160 195 158 215" stroke="#d4a0a8" stroke-width="10" stroke-linecap="round"/>
+      <path d="M225 178 Q240 195 242 215" stroke="#d4a0a8" stroke-width="10" stroke-linecap="round"/>
+      <g opacity="0.3">
+        <rect x="148" y="210" width="20" height="32" rx="3" fill="#999" stroke="#ccc" stroke-width="1"/>
+        <line x1="143" y1="205" x2="173" y2="247" stroke="#c0607a" stroke-width="3" stroke-linecap="round"/>
+        <line x1="173" y1="205" x2="143" y2="247" stroke="#c0607a" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <circle cx="140" cy="100" r="3" fill="#e0a8b8" opacity="0.6"/>
+      <circle cx="260" cy="80"  r="2" fill="#e0a8b8" opacity="0.5"/>
+      <circle cx="130" cy="200" r="2" fill="#e0a8b8" opacity="0.4"/>
+      <circle cx="272" cy="220" r="3" fill="#e0a8b8" opacity="0.5"/>
+      <g transform="translate(130,320)">
+        <circle cx="0" cy="0" r="5" fill="#f0b8c8"/>
+        <circle cx="8" cy="-6" r="4" fill="#f0b8c8"/>
+        <circle cx="14" cy="2" r="4" fill="#f0b8c8"/>
+        <circle cx="8" cy="8" r="4" fill="#f0b8c8"/>
+        <circle cx="0" cy="0" r="3" fill="#fff0f3"/>
+      </g>
+      <g transform="translate(248,310)">
+        <circle cx="0" cy="0" r="4" fill="#f0b8c8"/>
+        <circle cx="6" cy="-5" r="3" fill="#f0b8c8"/>
+        <circle cx="10" cy="2" r="3" fill="#f0b8c8"/>
+        <circle cx="5" cy="7" r="3" fill="#f0b8c8"/>
+        <circle cx="0" cy="0" r="2.5" fill="#fff0f3"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-title">
+    <h1>أنوثة بالفطرة</h1>
+    <p>Born Feminine</p>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+  <div class="lang-label"><span>🌸 عربي</span></div>
+
+  <article class="section-ar">
+    <p class="intro">عزيزاتي، من أغنى ما أملكه وقتي — وقد آثرتُ أن أُهديه لكِ اليوم.</p>
+    <p>
+      ما رأيتُه في الواقع وعلى المواقع أصابني بصدمة حقيقية؛
+      لقد بلغنا درجةً من نسيان الفطرة والأنوثة حتى أصبحت بعضنا
+      تتبنّى سلوكيات لا تنتمي إليها، وتنتظر في الوقت ذاته من الرجل
+      ما لم يُخلق ليكون. وكأنّنا نسينا أنّ الرجل إن تمثّلت فيه خصلةٌ
+      من الأنوثة وتجاهلها، فعليه أن يُعيد النظر في رجولته —
+      تماماً كما علينا نحن أن نُعيد النظر في أنوثتنا حين نتخلّى عنها.
+    </p>
+    <span class="highlight">
+      لماذا لم تعد الفتاة تهتمّ بأنوثتها بقدر ما تهتمّ بمظهرها؟<br>
+      حين تُعطين المظهرَ قيمةً أكبر ممّا في داخلك، فأنتِ تُطفئين أنوثتك.
+    </span>
+    <p>
+      الأنوثة تصرّفاتٌ، وطريقةُ تفكير، وعنايةٌ بالروح قبل أن تكون عناية بالجسد.
+      لم تأتِ بالفساتين والكعب العالي — بل هي في كيف تشعرين، وكيف تُعطين،
+      وكيف تجعلين من حولك يشعر بالدفء.
+    </p>
+    <p>
+      الأنثى الحقيقية حنينةٌ، تُربّي أجيالاً سويّة،
+      تمنح الرجلَ إحساسه برجولته لأنّها واثقةٌ من أنوثتها —
+      وتهتمّ بنفسيّتها ونظافتها قبل أن يأتي المظهر.
+      أنا مثلاً قد أرتدي أرقى الماركات، لكن إن كنتُ متسلّطةً في تصرّفاتي
+      فلستُ أنثى. وإن كنتُ بسيطةً تُعطي الرجل إحساسه بالمسؤولية
+      وتحافظ على رقّتها — فتلك هي الأنوثة.
+    </p>
+    <p class="closing">
+      عزيزتي، لا تنجرفي خلف ترندات تُوهمك أنّ التسلّط في العلاقة هو ما يُكسبك احترامك.
+      احذفي من حياتك كلّ صوتٍ يُقنعك بأنّ الأنوثة ضعف.
+      الهدوء، والتفكير، واللطف الفطري غير المتصنّع — هذه هي الأنوثة الحقيقية.
+    </p>
+  </article>
+
+  <div class="divider"><span>✦</span></div>
+
+  <div class="lang-label" style="direction:ltr; text-align:left;">
+    <span style="font-family:'Cormorant Garamond',serif; font-size:0.85rem; letter-spacing:4px; color:var(--muted);">🌸 ENGLISH</span>
+  </div>
+
+  <article class="section-en">
+    <p class="intro">Dear sisters, time is among the richest things I own — and today I choose to give it to you.</p>
+    <p>
+      What I've witnessed in real life and across social media has left me genuinely shaken.
+      We have drifted so far from our nature that some of us have adopted behaviours
+      that were never ours to carry — while expecting men to fill roles that aren't theirs either.
+    </p>
+    <span class="highlight">
+      Why has a woman's appearance become her priority over her essence?<br>
+      When you give your image more value than your inner world, you are slowly extinguishing your femininity.
+    </span>
+    <p>
+      True femininity is a way of thinking, a manner of moving through the world,
+      a care for the soul before the body. It didn't arrive with dresses and heels —
+      it lives in how you feel, how you give, and how you make the people around you feel seen and warm.
+    </p>
+    <p>
+      A truly feminine woman is tender; she raises grounded children;
+      she allows the man beside her to feel his purpose —
+      because she is secure enough in her own femininity to do so.
+      I may wear the finest brands, but if I dominate in my behaviour, I am not feminine.
+      If I carry myself with softness and honour the man's sense of responsibility —
+      <em>that</em> is femininity.
+    </p>
+    <p class="closing">
+      Dear one, do not be swept away by trends that tell you control is what earns you respect.
+      Remove every voice that convinces you femininity is weakness.
+      Stillness, thoughtfulness, and natural grace — unhurried and unperformed —
+      that is what it truly means to be feminine.
+    </p>
+  </article>
+
+</main>
+
+<footer>
+  <strong>🌸 أنوثة بالفطرة · Born Feminine</strong>
+  urbigisisi.github.io
+</footer>
+
+</body>
+</html>

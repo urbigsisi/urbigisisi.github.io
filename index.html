@@ -1,9 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-  <title>موقعي</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أنوثة بالفطرة</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fff8f8;
+      color: #4a3030;
+      direction: rtl;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f8e1e7, #fff0f3);
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 1px solid #f0c8d0;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #c0607a;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #a07880;
+      font-style: italic;
+    }
+
+    nav {
+      background: #fff;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(200,100,120,0.08);
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #c0607a;
+      margin: 0 20px;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #8b3a52; }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #fff0f3, #fff8f8);
+    }
+
+    .hero h2 {
+      font-size: 2em;
+      color: #c0607a;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
+      line-height: 1.9;
+      color: #7a5560;
+    }
+
+    .btn {
+      background: #c0607a;
+      color: white;
+      padding: 12px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .btn:hover { background: #8b3a52; }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 60px 20px;
+      background: #fff;
+    }
+
+    .card {
+      background: #fff8fa;
+      border: 1px solid #f0d0d8;
+      border-radius: 16px;
+      padding: 30px 25px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(192,96,122,0.12);
+    }
+
+    .card .icon { font-size: 2.5em; margin-bottom: 15px; }
+
+    .card h3 {
+      color: #c0607a;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .card p {
+      color: #8a6068;
+      line-height: 1.7;
+      font-size: 0.95em;
+    }
+
+    .quote {
+      background: linear-gradient(135deg, #f8e1e7, #fde8ee);
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .quote blockquote {
+      font-size: 1.4em;
+      color: #8b3a52;
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #f8e1e7;
+      color: #a07880;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-  <h1>أهلاً بكم في موقعي!</h1>
+
+  <header>
+    <h1>🌸 أنوثة بالفطرة</h1>
+    <p>لأن الجمال الحقيقي يأتي من الداخل</p>
+  </header>
+
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#">مقالات</a>
+    <a href="#">نصائح</a>
+    <a href="#">عن الموقع</a>
+  </nav>
+
+  <section class="hero">
+    <h2>مرحباً بكِ 🤍</h2>
+    <p>
+      هذا المكان ليس عن الترندات، بل عنكِ أنتِ.<br>
+      هنا نتحدث عن الأنوثة الحقيقية، الشخصية المستقلة،
+      والجمال الذي لا يحتاج موافقة أحد.
+    </p>
+    <a href="#" class="btn">اكتشفي أكثر</a>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <div class="icon">🌿</div>
+      <h3>الأنوثة الحقيقية</h3>
+      <p>الأنوثة ليست مكياجاً أو موضة، بل هي طريقة وجود راقية وهادئة تنبع من الداخل.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💫</div>
+      <h3>الشخصية المستقلة</h3>
+      <p>لا تنجرفي وراء كل موجة. من تعرف نفسها لا تحتاج أن تقلد أحداً.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🪞</div>
+      <h3>الثقة الهادئة</h3>
+      <p>الثقة الحقيقية لا تصرخ، بل تُشعر بها كل من حولكِ دون كلمة واحدة.</p>
+    </div>
+  </section>
+
+  <section class="quote">
+    <blockquote>
+      "الفتاة التي تعرف نفسها لا تحتاج أن يعرّفها أحد"
+    </blockquote>
+  </section>
+
+  <footer>
+    🌸 أنوثة بالفطرة &nbsp;|&nbsp; جميع الحقوق محفوظة
+  </footer>
+
 </body>
 </html>
